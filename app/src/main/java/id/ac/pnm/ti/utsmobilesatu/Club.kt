@@ -1,5 +1,4 @@
 package id.ac.pnm.ti.utsmobilesatu
-
 data class Club(
     val name: String,
     val epl: Int,
@@ -13,13 +12,7 @@ data class Club(
         get() = epl + fa + efl + ligaChampions + ligaEuropa
 
     fun recap(): String {
-        return "Club Name: $name\n" +
-                "EPL Titles: $epl\n" +
-                "FA Cup Titles: $fa\n" +
-                "EFL Cup Titles: $efl\n" +
-                "Champions League Titles: $ligaChampions\n" +
-                "Europa League Titles: $ligaEuropa\n" +
-                "Total Trophies: $totalTrophy"
+        return "|  ${name.padEnd(21)}| ${epl.toString().padEnd(19)}| ${fa.toString().padEnd(4)}| " + "${efl.toString().padEnd(4)}| " +
+                "${ligaChampions.toString().padEnd(21)}| " + "${ligaEuropa.toString().padEnd(16)}|" + "${totalTrophy.toString().padEnd(15)}|"
     }
-
 }
